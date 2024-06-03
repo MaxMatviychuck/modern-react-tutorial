@@ -28,6 +28,7 @@ export const images = createTable(
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
     updatedAt: timestamp("updatedAt", { withTimezone: true }),
+    userId: varchar("userId", { length: 256 }).notNull(),
   },
   (example) => ({
     nameIndex: index("name_idx").on(example.name),
